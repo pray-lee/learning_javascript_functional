@@ -18,3 +18,8 @@ import { times } from '../lib/es6-functional'
 times(10, number => {
     unless((number % 2), () => console.log(number, ' is even from times func'))
 })
+
+//监测给定的数字是否为NaN
+import { every } from '../lib/es6-functional'
+let everyResult = every([NaN, NaN, NaN], isNaN)
+console.log(everyResult)

@@ -40,3 +40,15 @@ const times = (times, fn) => {
 export {
     times
 }
+
+// every函数
+const every = (arr, fn) => {
+    let result = true
+    for (const value of arr) {
+        result = result && fn(arr[i])
+    }
+    return result
+}
+export {
+    every
+}
