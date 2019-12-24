@@ -1,4 +1,4 @@
-import forEach from '../lib/es6-functional'
+import { forEach } from '../lib/es6-functional'
 const array = [1, 2, 3]
 forEach(array, data => console.log(data))
 

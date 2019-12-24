@@ -6,7 +6,9 @@ const forEach = (array, fn) => {
     }
 }
 
-export default forEach
+export {
+    forEach
+}
 
 // 遍历对象
 const forEachObject = (obj, fn) => {
