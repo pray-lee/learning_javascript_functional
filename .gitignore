@@ -1,2 +1,3 @@
-.DS_Stooore
+.DS_Store
 **/node_modules
+.idea/
