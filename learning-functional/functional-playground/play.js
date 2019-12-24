@@ -15,7 +15,7 @@ forEach([1,2,3,4,5,6], number => {
 
 // 从0-100取出偶数
 import { times } from '../lib/es6-functional'
-times(10, number => {
+times(100, number => {
     unless((number % 2), () => console.log(number, ' is even from times func'))
 })
 
@@ -23,3 +23,22 @@ times(10, number => {
 import { every } from '../lib/es6-functional'
 let everyResult = every([NaN, NaN, NaN], isNaN)
 console.log(everyResult)
+
+// 真实的高阶函数
+import { tag } from '../lib/es6-functional'
+tag('fun')(it => console.log('value is', it))
+
+// unary
+import { unary } from '../lib/es6-functional'
+const unaryResult = [1, 2, 3].map(unary(parseInt))
+console.log(unaryResult)
+
+// once 函数
+import {once} from '../lib/es6-functional'
+const onceTest = once(() => {
+    console.log('执行中。。。')
+    return '执行完毕'
+})
+console.log(onceTest())
+console.log(onceTest())
+console.log(onceTest())

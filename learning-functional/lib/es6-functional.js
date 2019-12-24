@@ -25,8 +25,8 @@ export {
 }
 
 // 从一个数组中取出偶数
-const unless = (precidate, fn) => {
-    if (!precidate)
+const unless = (condition, fn) => {
+    if (!condition)
         fn()
 }
 export {
@@ -47,10 +47,42 @@ export {
 const every = (arr, fn) => {
     let result = true
     for (const value of arr) {
-        result = result && fn(arr[value])
+        console.log('------')
+        console.log(value)
+        result = result && fn(value)
     }
     return result
 }
 export {
     every
+}
+
+// tag
+const tag = value => (fn => (
+    typeof fn === 'function' && fn(value),
+        console.log(value)
+))
+export {
+    tag
+}
+
+// unary  接受一个给定的多参数函数，并且把他转换成只接收一个参数的函数
+const unary = fn =>
+    fn.length === 1 ?
+        fn :
+        arg => fn(arg)
+export {
+    unary
+}
+
+//once 让函数只执行一次
+const once = fn => {
+    let done = false
+    return () => {
+        console.log('done', done)
+        return done ? undefined : ( done = true, fn.apply(this, arguments) )
+    }
+}
+export {
+    once
 }
