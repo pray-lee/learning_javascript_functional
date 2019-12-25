@@ -79,10 +79,35 @@ export {
 const once = fn => {
     let done = false
     return () => {
-        console.log('done', done)
         return done ? undefined : ( done = true, fn.apply(this, arguments) )
     }
 }
 export {
     once
 }
+
+// 数组的函数式编程----------------------------------------------------------------------------------------
+// map
+const map = (array, fn) => {
+    let result = []
+    for (const value of array) {
+        result.push(fn(value))
+    }
+    return result
+}
+
+// filter 过滤
+const filter = (array, fn) => {
+    let result = []
+    for (const value of array)
+        fn(value) ? result.push(value) : undefined
+
+    return result
+}
+
+// 把数组的操作封装到一个对象里。
+export const arrayUtil = {
+    map,
+    filter
+}
+

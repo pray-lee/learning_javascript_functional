@@ -42,3 +42,37 @@ const onceTest = once(() => {
 console.log(onceTest())
 console.log(onceTest())
 console.log(onceTest())
+
+// map
+import {arrayUtil} from '../lib/es6-functional'
+const map = arrayUtil.map
+const mapResult = map([1,2,3], (value) => {
+    return value * value
+})
+console.log(mapResult)
+
+let apressBooks = [
+    {
+        id: 1,
+        title: 'javascript',
+        rating: [4.7],
+        author: 'lee'
+    },
+    {
+        id: 2,
+        title: 'python',
+        rating: [4.5],
+        author: 'su'
+    },
+]
+
+const apressBooksMapTest = map(apressBooks, book => ({
+    title: book.title,
+    author: book.author
+}))
+console.log(apressBooksMapTest)
+
+// filter
+const filter = arrayUtil.filter
+const apressBooksFilterTest = filter(apressBooks, book => book.rating[0] > 4.5)
+console.log(apressBooksFilterTest)
