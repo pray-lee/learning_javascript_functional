@@ -43,7 +43,7 @@ console.log(onceTest())
 console.log(onceTest())
 console.log(onceTest())
 
-// map
+// 数组 函数式编程 ---------------------------------------------------------------
 import {arrayUtil} from '../lib/es6-functional'
 const map = arrayUtil.map
 const mapResult = map([1,2,3], (value) => {
