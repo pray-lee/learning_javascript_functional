@@ -9,7 +9,6 @@ const forEach = (array, fn) => {
 export {
     forEach
 }
-
 // 遍历对象
 const forEachObject = (obj, fn) => {
     let property
